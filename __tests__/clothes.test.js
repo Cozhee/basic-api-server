@@ -11,7 +11,9 @@ beforeAll(async() => {
 
 afterAll(async() => {
   await sequelize.drop({});
+  await sequelize.close()
 });
+
 
 describe('Clothes route tests', () => {
 

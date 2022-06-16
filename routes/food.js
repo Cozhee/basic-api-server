@@ -49,9 +49,9 @@ router.put('/food/:id', async(request, response) => {
 router.delete('/food/:id', async(request, response) => {
   const id = request.params.id
   try {
-    const foodItemToDelete = await FoodModel.findOne({where: { id: id }})
-    await foodItemToDelete.destroy()
-    response.status(200).send(foodItemToDelete)
+    let foodItemToDelete = await FoodModel.findOne({where: { id: id }})
+    foodItemToDelete.destroy()
+    response.status(200).send({})
   } catch(err) {
     response.status(404).send(`Could not delete food item with id ${id}`)
   }

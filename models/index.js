@@ -4,9 +4,16 @@ const { Sequelize, DataTypes } = require('sequelize')
 const FoodSchema = require('./food')
 const ClothesSchema = require('./clothes')
 
-const sequelize = new Sequelize(`postgres://${process.env.USERNAME}:${process.env.PW}${process.env.HOST}:5432/${process.env.DB_NAME}`)
+const sequelize = new Sequelize(`postgres://${process.env.USERNAME}:${process.env.PW}${process.env.HOST}:5432/${process.env.DB_NAME}`, {
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  }
+})
 
-// use this code when deploying
+// // use this code when deploying
 // {
 //   dialectOptions: {
 //     ssl: {

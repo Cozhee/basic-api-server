@@ -51,7 +51,7 @@ router.delete('/clothes/:id', async(request, response) => {
   try {
     const ClothesItemToDelete = await ClothesModel.findOne({where: { id: id }})
     await ClothesItemToDelete.destroy()
-    response.status(200).send(ClothesItemToDelete)
+    response.status(200).send({})
   } catch(err) {
     response.status(404).send(`Could not delete clothes item with id ${id}`)
   }

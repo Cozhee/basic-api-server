@@ -4,7 +4,9 @@ const { Sequelize, DataTypes } = require('sequelize')
 const FoodSchema = require('./food')
 const ClothesSchema = require('./clothes')
 
-const sequelize = new Sequelize(`postgres://${process.env.USERNAME}:${process.env.PW}${process.env.HOST}:5432/${process.env.DB_NAME}`)
+const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite::memory' : process.env.DATABASE_URL || `postgres://${process.env.USERNAME}:${process.env.PW}${process.env.HOST}:5432/${process.env.DB_NAME}`
+
+const sequelize = new Sequelize(DATABASE_URL)
 
 // use this code when deploying
 // {

@@ -9,7 +9,7 @@ Setting up a basic express server to configure heroku deployment and to create t
 
 ### Links and Resources
 - [Github](https://github.com/Cozhee/basic-api-server/pulls)
-- [Heroku Dev Deployment](https://cody-server-deploy-dev.herokuapp.com/)
+- [Heroku Dev Deployment](https://lab03-api.herokuapp.com/)
 
 ### Setup
 
@@ -24,6 +24,9 @@ Setting up a basic express server to configure heroku deployment and to create t
 `nodemon` to run the server
 Open `http://localhost:3001/` to view the server
 
+If you visit [Heroku Dev Deployment](https://lab03-api.herokuapp.com/) you may have to manually type the routes into the URL to see proof of life. This is currently just a backend API server.
+
+You will need a JSON object in your `POST` method in order to create a food item.
 #### How to use your library (where applicable)
 N/A
 
@@ -31,17 +34,20 @@ N/A
 - Feature One: Added route
 - GET : `/`
 
-- Feature Two: Added route
+- Feature Two: Added food route
 - GET: `/food`
-
-- Feature Two: Added route
 - GET: `/food/:id`
+- POST: `/food`
+- PUT: `/food/:id`
+- DELETE: `/food`
 
-- Feature Two: Added route
-- GET: `/home`
 
-- Feature Two: Added route
-- GET: `/home/:id`
+- Feature Two: Added clothes route
+- GET: `/clothes`
+- GET: `/clothes/:id`
+- POST: `/clothes`
+- PUT: `/clothes/:id`
+- DELETE: `/clothes`
 
 #### Tests
 To run tests type `npm test`. Server does not need to be running in another instance
